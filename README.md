@@ -4,7 +4,14 @@ RuleWeave is an interactive web application that converts natural language rule 
 
 ## Demo
 
-![RuleWeave Demo](https://youtu.be/dbyNxUakDII)
+https://github.com/user-attachments/assets/9e640133-38ac-475f-ace1-fd6503e6b714
+
+
+
+
+https://github.com/user-attachments/assets/56e9935f-dc1c-4985-8f55-bf5c8c7b88ed
+
+
 
 ## Features
 
