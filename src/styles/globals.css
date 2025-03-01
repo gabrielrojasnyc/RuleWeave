@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand colors */
+  --primary: #0B9E8E; /* Teal */
+  --primary-light: #4FD1C5;
+  --primary-dark: #05746A;
+  --secondary: #FF6B6B; /* Coral */
+  --secondary-light: #FFA69E;
+  --secondary-dark: #D84C4C;
+  --accent: #F5A623; /* Mustard Yellow */
+  --accent-light: #F9CB76;
+  --accent-dark: #D98800;
+  
+  /* Gradient colors */
+  --brand-gradient-from: #0B9E8E; /* Teal */
+  --brand-gradient-to: #4FD1C5;  /* Light Teal */
+  --secondary-gradient-from: #FF6B6B; /* Coral */
+  --secondary-gradient-to: #FFA69E; /* Light Coral */
+  --accent-gradient-from: #F5A623; /* Mustard */
+  --accent-gradient-to: #F9CB76; /* Light Mustard */
+  
+  /* Entity types - Updated for new palette */
+  --entity-color: #0B9E8E; /* Teal */
+  --condition-color: #F5A623; /* Mustard */
+  --action-color: #FF6B6B; /* Coral */
+  --value-color: #3E4C59; /* Charcoal */
+  
+  /* Background */
+  --foreground-rgb: 62, 76, 89; /* Charcoal */
+  --background-rgb: 249, 250, 251; /* Neutral 50 */
+  
+  /* Card and UI styling */
+  --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  --card-border: 1px solid rgba(0, 0, 0, 0.05);
+  
+  /* Accessibility - High Contrast Mode Options */
+  --high-contrast-background: white;
+  --high-contrast-text: black;
+  --high-contrast-border: black;
+  --high-contrast-primary: #05746A; /* Darker teal for better contrast */
+  --high-contrast-secondary: #D84C4C; /* Darker coral for better contrast */
+  --high-contrast-focus: #05746A; /* Dark teal for focus indicators */
+  --high-contrast-error: #D84C4C; /* Dark coral for errors */
+  --high-contrast-success: #05746A; /* Dark teal for success */
+}
+
+/* Text size utility classes */
+.text-size-small {
+  font-size: 0.875rem;
+}
+
+.text-size-medium {
+  font-size: 1rem;
+}
+
+.text-size-large {
+  font-size: 1.125rem;
+}
+
+.text-size-xlarge {
+  font-size: 1.25rem;
+}
+
+/* Base styles */
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+}
+
+/* Custom button classes */
+.btn-primary {
+  @apply bg-gradient-to-br from-brand-teal to-brand-teal-light text-white font-medium py-2.5 px-5 rounded-lg shadow-md hover:shadow-lg hover:translate-y-[-1px] transition-all duration-200;
+}
+
+.btn-secondary {
+  @apply bg-gradient-to-br from-brand-coral to-brand-coral-light text-white font-medium py-2.5 px-5 rounded-lg shadow-md hover:shadow-lg hover:translate-y-[-1px] transition-all duration-200;
+}
+
+.btn-success {
+  @apply bg-gradient-to-br from-brand-teal-dark to-brand-teal text-white font-medium py-2.5 px-5 rounded-lg shadow-md hover:shadow-lg hover:translate-y-[-1px] transition-all duration-200;
+}
+
+.btn-outline {
+  @apply border-2 border-neutral-200 text-brand-charcoal bg-white font-medium py-2.5 px-5 rounded-lg shadow-sm hover:border-neutral-300 hover:bg-neutral-50 transition-all duration-200;
+}
+
+/* Entity type badges */
+.badge-entity {
+  @apply bg-brand-teal-light/20 text-brand-teal-dark border border-brand-teal-light/30;
+}
+
+.badge-condition {
+  @apply bg-brand-mustard-light/20 text-brand-mustard-dark border border-brand-mustard-light/30;
+}
+
+.badge-action {
+  @apply bg-brand-coral-light/20 text-brand-coral-dark border border-brand-coral-light/30;
+}
+
+.badge-value {
+  @apply bg-brand-charcoal-light/20 text-brand-charcoal-dark border border-brand-charcoal-light/30;
+}
+
+/* Card styling */
+.card {
+  @apply bg-white rounded-xl shadow-card border border-neutral-200/50 overflow-hidden transition-all duration-200 backdrop-blur-sm;
+}
+
+.card-hover {
+  @apply hover:shadow-card-hover hover:border-neutral-300/50 transform hover:translate-y-[-2px] transition-all duration-200;
+}
+
+/* Micro-interactions */
+.btn-hover-effect {
+  @apply transition-transform duration-200 hover:scale-105;
+}
+
+.interactive-element {
+  @apply transition-all duration-200 hover:brightness-105 active:brightness-95;
+}
+
+/* Animation utilities */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Focus and accessibility styles */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-teal;
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+  @apply sr-only bg-white text-brand-teal-dark px-4 py-2 font-medium rounded-md shadow-lg z-50;
+}
+
+.skip-link:focus {
+  @apply not-sr-only fixed top-3 left-3;
+}
+
+/* High contrast mode - trigger with data-high-contrast="true" on html */
+[data-high-contrast="true"] {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+}
+
+[data-high-contrast="true"] body {
+  color: var(--high-contrast-text);
+  background: var(--high-contrast-background);
+}
+
+[data-high-contrast="true"] .btn-primary, 
+[data-high-contrast="true"] .btn-secondary,
+[data-high-contrast="true"] .btn-success {
+  background: var(--high-contrast-background);
+  color: var(--high-contrast-text);
+  border: 2px solid var(--high-contrast-border);
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+[data-high-contrast="true"] .card {
+  border: 2px solid var(--high-contrast-border);
+  box-shadow: none !important;
+}
+
+[data-high-contrast="true"] input, 
+[data-high-contrast="true"] textarea, 
+[data-high-contrast="true"] select {
+  border: 2px solid var(--high-contrast-border);
+  color: var(--high-contrast-text);
+  background: var(--high-contrast-background);
+}
+
+[data-high-contrast="true"] *:focus-visible {
+  outline: 3px solid var(--high-contrast-primary) !important;
+  outline-offset: 2px !important;
+}
+
+[data-high-contrast="true"] .text-slate-500,
+[data-high-contrast="true"] .text-slate-600,
+[data-high-contrast="true"] .text-slate-700 {
+  color: var(--high-contrast-text) !important;
+}
+
+[data-high-contrast="true"] .bg-gradient-to-br,
+[data-high-contrast="true"] .bg-gradient-to-r {
+  background-image: none !important;
+  background-color: var(--high-contrast-background) !important;
+}
+
+/* System preference high contrast mode */
+@media (prefers-contrast: more) {
+  body {
+    color: var(--high-contrast-text);
+    background: var(--high-contrast-background);
+  }
+  
+  .btn-primary, 
+  .btn-secondary,
+  .btn-success {
+    background: var(--high-contrast-background) !important;
+    color: var(--high-contrast-text) !important;
+    border: 2px solid var(--high-contrast-border) !important;
+    background-image: none !important;
+  }
+  
+  .card {
+    border: 2px solid var(--high-contrast-border);
+    box-shadow: none !important;
+  }
+  
+  input, textarea, select {
+    border: 2px solid var(--high-contrast-border);
+    color: var(--high-contrast-text);
+    background: var(--high-contrast-background);
+  }
+  
+  *:focus-visible {
+    outline: 3px solid var(--high-contrast-primary) !important;
+    outline-offset: 2px !important;
+  }
+  
+  .text-slate-500,
+  .text-slate-600,
+  .text-slate-700 {
+    color: var(--high-contrast-text) !important;
+  }
+  
+  .bg-gradient-to-br,
+  .bg-gradient-to-r {
+    background-image: none !important;
+    background-color: var(--high-contrast-background) !important;
+  }
+}
+
+/* Improved focus styles for keyboard navigation */
+*:focus-visible {
+  outline: 3px solid var(--primary) !important;
+  outline-offset: 2px !important;
+}
+
+/* Larger touch targets for mobile */
+@media (max-width: 768px) {
+  button, 
+  a, 
+  [role="button"],
+  input[type="checkbox"] + label,
+  input[type="radio"] + label {
+    @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+  }
+  
+  .form-control {
+    @apply min-h-[44px];
+  }
+  
+  /* Increase form fields size for better touch targets */
+  input, select, textarea {
+    @apply text-base py-2.5 px-3;
+  }
+}
+
+/* Reduced motion settings */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
