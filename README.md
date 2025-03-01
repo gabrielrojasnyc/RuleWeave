@@ -2,6 +2,10 @@
 
 RuleWeave is an interactive web application that converts natural language rule descriptions into structured rule logic using Claude AI.
 
+## Demo
+
+![RuleWeave Demo](https://youtu.be/dbyNxUakDII)
+
 ## Features
 
 - Natural Language to Rule Code conversion
@@ -22,8 +26,8 @@ RuleWeave is an interactive web application that converts natural language rule 
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/ruleweave.git
-cd ruleweave
+git clone https://github.com/gabrielrojasnyc/RuleWeave.git
+cd RuleWeave
 ```
 
 2. Install dependencies

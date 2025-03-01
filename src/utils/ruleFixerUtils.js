@@ -98,7 +98,12 @@ export const autoFixRule = (ruleCode, errors = []) => {
 
 /**
  * Count occurrences of a character in a string
+ * @param {string} str - The string to search in
+ * @param {string} char - The character to count
+ * @returns {number} - Number of occurrences
  */
 const countOccurrences = (str, char) => {
-  return (str.match(new RegExp(char, 'g')) || []).length;
+  // Escape special regex characters to avoid errors
+  const escapedChar = char.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return (str.match(new RegExp(escapedChar, 'g')) || []).length;
 };

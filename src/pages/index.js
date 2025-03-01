@@ -426,7 +426,7 @@ export default function Home() {
               onTextSizeChange={setTextSize}
             />
             
-            <a href="https://github.com/yourusername/ruleweave" 
+            <a href="https://github.com/gabrielrojasnyc/RuleWeave" 
                target="_blank" 
                rel="noopener noreferrer"
                className="text-slate-500 hover:text-indigo-600 flex items-center text-sm font-medium transition-colors duration-200"
